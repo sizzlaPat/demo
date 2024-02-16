@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ProductService } from '../services/product.service';
+import { Product} from '../model/product.model';
 
 @Component({
   selector: 'app-products',
@@ -15,7 +16,7 @@ export class ProductsComponent implements OnInit{
  {id:4 ,name: "harddrive", price:100,checked:true},
  {id:5 ,name: "USB key", price:6,checked:false}
 ]; */
-products : Array<any> =[];
+products : Array<Product> =[];
 
 constructor(private productService:ProductService){}
 
@@ -34,7 +35,7 @@ this.productService.getProducts().subscribe(data =>{
 }
 
 
-handleCheckProduct(product:any){
+handleCheckProduct(product:Product){
 /* this.http.patch('http://localhost:8089/products/${product.id}',{checked:!product.checked})
  product.checked=!product.checked; */
  //this.http.patch(`http://localhost:8089/products/${product.id}`, { checked: !product.checked })

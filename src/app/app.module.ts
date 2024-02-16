@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { NewProductComponent } from './new-product/new-product.component';
-import { ProductService} from './services/product.service';
+//import { ProductService} from './services/product.service';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent }, // Default route to home component
@@ -29,7 +29,7 @@ const routes: Routes = [
 
   ],
   exports: [ RouterModule],
-  providers: [ProductService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
