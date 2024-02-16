@@ -4,7 +4,7 @@
       "id": "1",
       "name": "computer",
       "price": 600,
-      "checked": false
+      "checked": true
     },
     {
       "id": "2",
@@ -34,7 +34,7 @@
       "id": "6",
       "name": "SmartPhone",
       "price": 250,
-      "checked": false
+      "checked": true
     }
   ]
 }
