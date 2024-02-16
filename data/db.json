@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "computer",
+      "price": 600,
+      "checked": false
+    },
+    {
+      "id": "2",
+      "name": "printer",
+      "price": 100,
+      "checked": true
+    },
+    {
+      "id": "3",
+      "name": "scanner",
+      "price": 110,
+      "checked": true
+    },
+    {
+      "id": "4",
+      "name": "hardDrive",
+      "price": 100,
+      "checked": true
+    },
+    {
+      "id": "5",
+      "name": "USB key",
+      "price": 6,
+      "checked": false
+    },
+    {
+      "id": "6",
+      "name": "SmartPhone",
+      "price": 250,
+      "checked": false
+    }
+  ]
+}
