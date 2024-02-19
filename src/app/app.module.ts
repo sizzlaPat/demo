@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { NewProductComponent } from './new-product/new-product.component';
+import { ReactiveFormsModule } from '@angular/forms'; // Import ReactiveFormsModule
+
 //import { ProductService} from './services/product.service';
 
 const routes: Routes = [
@@ -25,7 +27,8 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule // Add ReactiveFormsModule here
 
   ],
   exports: [ RouterModule],

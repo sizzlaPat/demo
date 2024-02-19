@@ -3,6 +3,28 @@
   <div class="card-body">
     <h3> New Product Component</h3>
     <p>new-product works!</p>
+    <div class="row">
+      <div class="col-md-6">
+        {{productForm.value | json}}
+        <form [formGroup]="productForm" (ngSubmit)="saveProduct()">
+            <div class="mb-3">
+              <label class="label-form">Name</label>
+              <input  class="form-control"  formControlName="name">
+            </div>
+          <div class="mb-3">
+            <label class="label-form">Price</label>
+            <input  class="form-control"  formControlName="price">
+          </div>
+          <div class="mb-3">
+            <label class="label-form">Checked </label>
+            <input type="checkbox" class="form-check-input"  formControlName="checked">
+          </div>
+          <button class="btn btn-success"> Save</button>
+
+
+        </form>
+      </div>
+    </div>
   </div>
 
 </div>

@@ -10,13 +10,18 @@ export class ProductService {
 
   constructor(private http : HttpClient) { }
   public getProducts() :Observable<Product[]> {
-
   return this.http.get<Product[]>("http://localhost:8089/products");
-
   }
 
-  public checkProducts(product:Product):Observable<any> {
-
+  public checkProducts(product:Product):Observable<Product> {
   return this.http.patch<any>(`http://localhost:8089/products/${product.id}`,{ checked: !product.checked });
+  }
+
+  public deleteProduct(product :Product):Observable<Product>{
+  return this.http.delete<any>(`http://localhost:8089/products/${product.id}`);
+  }
+
+  public saveProduct(product : Product): Observable<Product>{
+  return this.http.post<Product>("http://localhost:8089/products", product);
   }
 }
