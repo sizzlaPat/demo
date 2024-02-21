@@ -21,5 +21,6 @@ export class AppComponent {
 
   setCurrentAction(action :any){
   this.currentAction=action;
+
   }
 }

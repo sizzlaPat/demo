@@ -1,7 +1,8 @@
 import { Component ,OnInit} from '@angular/core';
-import { FormGroup, FormBuilder} from "@angular/forms";
+import { FormGroup, FormBuilder,Validators} from "@angular/forms";
 import { ProductService } from '../services/product.service';
 import { Product} from '../model/product.model';
+
 
 
 
@@ -29,8 +30,8 @@ checked:this.fb.control(false)
 ngOnInit() {
   // Initialize the productForm FormGroup using FormBuilder
   this.productForm = this.fb.group({
-    name: this.fb.control(''),      // Create a form control for name with an initial value of ''
-    price: this.fb.control(''),     // Create a form control for price with an initial value of ''
+    name: this.fb.control('',[Validators.required,Validators.maxLength(10)]),      // Create a form control for name with an initial value of ''
+    price: this.fb.control(0,[Validators.required,Validators.maxLength(4)]),     // Create a form control for price with an initial value of ''
     checked: this.fb.control(false) // Create a form control for checked with an initial value of false
   });
 }

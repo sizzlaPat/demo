@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,EventEmitter, Output} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ProductService } from '../services/product.service';
 import { Product} from '../model/product.model';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-
+import { FormGroup, FormBuilder,Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-products',
@@ -22,10 +21,16 @@ export class ProductsComponent implements OnInit{
 
 // Methode dynamique
  products : Array<Product> =[];
-
+public  keyword : string ="";
+/* @Output() searchEvent = new EventEmitter<string>();
+  searchForm: FormGroup; */
 //products! :Observable <Array<Product>> ;
 //products!: Observable<Product[]>;
-constructor(private productService:ProductService){}
+constructor(private productService:ProductService){
+/* this.searchForm = this.fb.group({
+      searchTerm: [''] // Initialize with an empty string
+    }); */
+}
 
 ngOnInit(){
 this.getProducts();
@@ -69,20 +74,15 @@ this.productService.checkProducts(product).subscribe(
             }
           );
         }
-}
+ }
 
- /* handleDeleteProduct(product: Product) {
-  if (confirm("Êtes-vous sûr de vouloir supprimer?")) {
-    this.productService.deleteProduct(product).subscribe({
-      next: () => {
-         this.products = this.products.pipe(
-                  map(products => products.filter(p => p.id !== product.id))
-                );
-      },
-      error: (err) => {
-        console.error(err);
-      }
-    });
-  } */
+  searchProduct(){
+     this.productService.searchProducts(this.keyword).subscribe((value:Product[]) =>{this.products=value;
+            },
+            error=>{console.error(error); //Traitement des erreurs
+            });
+
+           }
+
 
 }
